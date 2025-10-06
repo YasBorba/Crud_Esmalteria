@@ -1,0 +1,137 @@
+/* ====== RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f9d5e5, #fcd5ce, #f8c8dc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px; /* garante espaçamento em telas pequenas */
+}
+
+/* ====== LOGIN CONTAINER ====== */
+.login-container {
+  background: #fff;
+  padding: 40px 35px;
+  border-radius: 20px;
+  width: 350px;
+  max-width: 100%; /* nunca ultrapassa a tela */
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.login-container h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #d6336c;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ====== FORM ====== */
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid #f8c8dc;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #d6336c;
+  box-shadow: 0 0 8px rgba(214, 51, 108, 0.4);
+}
+
+/* ====== BOTÃO ====== */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #d6336c;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #b81e53;
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(214, 51, 108, 0.4);
+}
+
+/* ====== ERRO ====== */
+.erro {
+  margin-top: 15px;
+  color: #b81e53;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ====== ANIMAÇÃO ====== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== RESPONSIVIDADE ====== */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .login-container {
+    padding: 25px 20px;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .login-container h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    width: 90%;
+  }
+}
