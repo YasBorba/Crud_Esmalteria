@@ -1,13 +1,14 @@
+
 <?php
-// Função para pegar pizzas com estoque baixo
+// Função para pegar esmaltes com estoque baixo
 function getEsmaltesEstoqueBaixo($conn) {
-    // Buscar todas as pizzas
+    // Buscar todas os esmaltes
     $sql = "SELECT * FROM esmaltes WHERE ativo = 1";
     $resultado = $conn->query($sql);
     
     $esmaltes_estoque_baixo = array();
     
-    // Para cada pizza, calcular o estoque
+    // Para cada esmalte, calcular o estoque
     while ($esmalte = $resultado->fetch_assoc()) {
         $esmalte_id = $esmalte['id'];
         
@@ -38,12 +39,12 @@ function getEsmaltesEstoqueBaixo($conn) {
 function gerarAlertaEstoque($conn) {
     $esmaltes_com_estoque_baixo = getEsmaltesEstoqueBaixo($conn);
     
-    // Se não tem pizzas com estoque baixo
+    // Se não tem esmaltes com estoque baixo
     if (empty($esmaltes_com_estoque_baixo)) {
         return null;
     }
     
-    // Se tem pizzas com estoque baixo, criar o alerta
+    // Se tem esmaltes com estoque baixo, criar o alerta
     $quantidade_esmaltes = count($esmaltes_com_estoque_baixo);
     
     return array(
@@ -53,6 +54,3 @@ function gerarAlertaEstoque($conn) {
     );
 }
 ?>
-
-
-
